@@ -1,15 +1,33 @@
 <template>
   <div>
-<h1>hello</h1>
+    <h1>hello</h1>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'App'
-  }
+
+import {portfolio} from './portfolio';
+import axios from 'axios';
+export default {
+  name: 'App',
+  data() {
+    return {
+      store,
+      projects: []
+    }
+  },
+  methods: {
+    getAllProjects() {
+axios.get(this.portfolio.apiBaseUrl + 'post').then((res) => {
+  this.projects = res.data.results;
+})
+  },
+
+},
+mounted(){
+  this.getAllProjects();
+}
+}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
