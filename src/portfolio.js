@@ -1,5 +1,0 @@
-import {reactive} from 'vue';
-export const portfolio = reactive({
-    apiBaseUrl: 'http://127.0.0.1:8000/api/',
-    imageBasePath: 'http://127.0.0.1:8000/storage/'
-});

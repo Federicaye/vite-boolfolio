@@ -1,32 +1,36 @@
 <template>
   <div>
-    <h1>hello</h1>
+    <h1>Projects</h1>
+    <ul>
+      <li v-for="project in projects" :key="ptoject.id">{{ project.title }}</li>
+    </ul>
   </div>
+
 </template>
 
 <script>
 
-import {portfolio} from './portfolio';
+import {store } from './store';
 import axios from 'axios';
 export default {
   name: 'App',
   data() {
     return {
       store,
-      projects: []
+      
     }
   },
   methods: {
     getAllProjects() {
-axios.get(this.portfolio.apiBaseUrl + 'post').then((res) => {
-  this.projects = res.data.results;
-})
-  },
+      axios.get(this.store.apiBaseUrl + 'post').then((res) => {
+        this.store.projects = res.data.results;
+      })
+    },
 
-},
-mounted(){
-  this.getAllProjects();
-}
+  },
+  mounted() {
+    this.getAllProjects();
+  }
 }
 </script>
 
