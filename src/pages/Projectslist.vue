@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="project in store.projects" :key="project.id">{{ project.name }}
+    <li v-for="project in projects" :key="project.id">{{ project.name }}
 
     </li>
     </ul>
@@ -9,6 +9,7 @@
 <script>
 import axios from 'axios';
 import { store } from '../store';
+
     export default {
         name: 'Projectslist',
         data() {
@@ -18,15 +19,16 @@ import { store } from '../store';
         }
     },
     methods: {
-    getAllProjects() {
-      axios.get(this.store.apiBaseUrl + 'projects').then((res) => {
-        this.store.projects = res.data.results;
-      })
-    },
+      getAllProjects() {
+        axios.get(this.store.apiBaseUrl + 'projects').then((res) => {
+          this.projects = res.data.results;
+        })
+      },
+  
 
   },
   mounted() {
-    this.getAllProjects();
+    this.actions.getAllProjects();
   }
     }
 </script>

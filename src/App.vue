@@ -8,7 +8,7 @@
 
 <script>
 
-import {store } from './store';
+import {store} from './store';
 import axios from 'axios';
 export default {
   name: 'App',
@@ -20,11 +20,10 @@ export default {
   },
   methods: {
     getAllProjects() {
-      axios.get(this.store.apiBaseUrl + 'projects').then((res) => {
-        this.store.projects = res.data.results;
-      })
-    },
-
+        axios.get(this.store.apiBaseUrl + 'projects').then((res) => {
+          this.store.projects = res.data.results;
+        })
+      },
   },
   mounted() {
     this.getAllProjects();
