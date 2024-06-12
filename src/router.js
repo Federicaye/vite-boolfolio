@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from "./pages/AppHome.vue";
-import PostList from "./pages/ProjectsList.vue";
-import PostComponent from "./pages/SingleProject.vue";
+import ProjectsList from "./pages/Projectslist.vue";
+import SingleProject from "./pages/SingleProject.vue";
 import NotFound from "./pages/NotFound.vue";
-import ContactComponent from "./pages/Contact.vue";
-import AboutComponent from "./pages/About.vue";
+import Contact from "./pages/Contact.vue";
+import About from "./pages/About.vue";
 
 const router = createRouter({
   history: createWebHistory(),

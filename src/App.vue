@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>Projects</h1>
-    <ul>
-      <li v-for="project in projects" :key="ptoject.id">{{ project.title }}</li>
-    </ul>
+   <router-view></router-view>
   </div>
 
 </template>
@@ -22,7 +20,7 @@ export default {
   },
   methods: {
     getAllProjects() {
-      axios.get(this.store.apiBaseUrl + 'post').then((res) => {
+      axios.get(this.store.apiBaseUrl + 'projects').then((res) => {
         this.store.projects = res.data.results;
       })
     },
